@@ -11,23 +11,22 @@ public class DoorRiddle {
         System.out.println("Welcome, " + name + ".");
         int secret = (int) (Math.random() * 100) + 1;
         int number = 0;
-        int attemps = 0;
+        int attempts = 0;
         while (number != secret) {
 
             System.out.println("I demand a password to enter the dungeon.");
 
             number = scanner.nextInt();
-
+            attempts += 1;
             if (number > secret) {
                 System.out.println("Too high! The door remains closed.");
-                attemps  += 1;
+
             } else if (number < secret) {
                 System.out.println("Too low! The door remains closed.");
-                attemps += 1;
-            } else if (number == secret) {
+
+            } else  {
                 System.out.println("The door creaks open.");
-                attemps += 1;
-                System.out.println("you failed " + attemps + " times you fool");
+                System.out.println("it took you " + attempts + " tries");
             }
         }
 
