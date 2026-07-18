@@ -4,7 +4,7 @@ public class DoorRiddle {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("The door whispers: who approaches?");
+        System.out.println("The door whispers: who approaches?");
         System.out.print("Enter your name: ");
         String name = scanner.nextLine();
 
@@ -24,11 +24,12 @@ public class DoorRiddle {
             } else if (number < secret) {
                 System.out.println("Too low! The door remains closed.");
 
-            } else  {
+            } else {
                 System.out.println("The door creaks open.");
                 System.out.println("it took you " + attempts + " tries");
             }
         }
-
+        
+        scanner.close();
     }
 }
