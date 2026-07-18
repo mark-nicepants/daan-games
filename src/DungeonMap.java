@@ -3,6 +3,9 @@ public class DungeonMap {
         printTitle();
         greet("daan");
         greet("mark");
+        int playerRow = 2;
+        int playerCol = 1;
+
         char[][] map = {
                 { '#', '#', '#', '#', '#', },
                 { '#', '.', '.', '.', '#', },
@@ -10,13 +13,20 @@ public class DungeonMap {
                 { '#', '.', '.', '.', '#', },
                 { '#', '#', '#', '#', '#', },
         };
-        for ( int r = 0; r < map.length; r++) {
+        printMap(map, playerRow, playerCol);
+    }
+
+    static void printMap(char[][] map, int playerRow, int playerCol) {
+        for (int r = 0; r < map.length; r++) {
             for (int c = 0; c < map[r].length; c++) {
-                System.out.print(map[r][c]);
+                if (r == playerRow && c == playerCol) {
+                    System.out.print('@');
+                } else {
+                    System.out.print(map[r][c]);
+                }
             }
-            System.out.println(); 
+            System.out.println();
         }
-        
     }
 
     static void printTitle() {

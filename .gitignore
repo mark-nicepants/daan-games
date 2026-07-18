@@ -2,6 +2,6 @@
 build/
 out/
 .idea/
-.vscode/
+.vscode/ 
 *.class
 .DS_Store
