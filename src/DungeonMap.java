@@ -3,6 +3,11 @@ public class DungeonMap {
         printTitle();
         greet("daan");
         greet("mark");
+        char[] hallway = {'#', '.', '.', '.', '.', '#'};
+        for (int i = 0; i < hallway.length; i++) {
+            System.out.print(hallway[i]);
+        }
+        System.out.println();
 
     }
 
