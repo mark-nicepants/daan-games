@@ -3,18 +3,26 @@ public class DungeonMap {
         printTitle();
         greet("daan");
         greet("mark");
-        char[] hallway = {'#', '.', '.', '.', '.', '#'};
-        for (int i = 0; i < hallway.length; i++) {
-            System.out.print(hallway[i]);
+        char[][] map = {
+                { '#', '#', '#', '#', '#', },
+                { '#', '.', '.', '.', '#', },
+                { '#', '.', '#', '.', '#', },
+                { '#', '.', '.', '.', '#', },
+                { '#', '#', '#', '#', '#', },
+        };
+        for ( int r = 0; r < map.length; r++) {
+            for (int c = 0; c < map[r].length; c++) {
+                System.out.print(map[r][c]);
+            }
+            System.out.println(); 
         }
-        System.out.println();
-
+        
     }
 
     static void printTitle() {
         System.out.println("=============");
         System.out.println(" \\--------/");
-        System.out.println("  | jugo | ");
+        System.out.println("  | JUGO | ");
         System.out.println("--\\------/---");
     }
 
