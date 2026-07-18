@@ -54,5 +54,5 @@ You are learning to program; the code is yours to write. The working agreement:
 
 ## Status
 
-- **Current phase:** Phase 0 — Java fundamentals (in progress, step 0.1)
+- **Current phase:** Phase 0 — Java fundamentals (in progress, step 0.4)
 - **Started:** July 2026

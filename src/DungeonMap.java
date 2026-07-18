@@ -14,6 +14,7 @@ public class DungeonMap {
                 { '#', '#', '#', '#', '#', },
         };
         printMap(map, playerRow, playerCol);
+
     }
 
     static void printMap(char[][] map, int playerRow, int playerCol) {
