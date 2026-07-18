@@ -1,8 +1,8 @@
 public class DungeonMap {
     public static void main(String[] args) {
         printTitle();
-        printgreet("daan");
-        printgreet("mark");
+        greet("daan");
+        greet("mark");
 
     }
 
