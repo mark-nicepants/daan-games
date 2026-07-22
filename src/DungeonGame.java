@@ -1,16 +1,23 @@
 public class DungeonGame {
     public static void main(String[] args) {
-        Player hero = new Player("Daan", 20);
+        Player hero = new Player("Daan", 20, 6);
         System.out.println(hero.name + " enters the dungeon with " + hero.health + " HP.");
 
         Monster zombie = new Monster("zombie", 20, 5);
 
-        hero.printStatus();
-        hero.takeDamage(5);
-        hero.printStatus();
+        while (hero.isAlive() && zombie.isAlive()) {
+            zombie.takeDamage(hero.damage);
+            if (!zombie.isAlive()) {
+                System.out.println("The hero is victorious!!!!!!!");
+            }
 
-        zombie.printStatus();
-    
+            if (hero.isAlive() && zombie.isAlive()) {
+                hero.takeDamage(zombie.damage);
+                if (!hero.isAlive()) {
+                    System.out.println("The hero is dead!! Zombie wins!!");
+                }
+            }
+        }
     }
 
 }
@@ -18,10 +25,12 @@ public class DungeonGame {
 class Player {
     String name;
     int health;
+    int damage;
 
-    Player(String name, int health) {
+    Player(String name, int health, int damage) {
         this.name = name;
         this.health = health;
+        this.damage = damage;
     }
 
     void printStatus() {
@@ -31,7 +40,10 @@ class Player {
     void takeDamage(int amount) {
         health -= amount;
         System.out.println(name + " took " + amount + " damage. He has " + health + " left remaining.");
+    }
 
+    boolean isAlive() {
+        return health > 0;
     }
 }
 
@@ -44,6 +56,10 @@ class Monster {
         this.name = name;
         this.health = health;
         this.damage = damage;
+    }
+
+    boolean isAlive() {
+        return health > 0;
     }
 
     void printStatus() {
